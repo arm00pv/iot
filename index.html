@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Device Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <h1>IoT Device Detector</h1>
+    <div id="mainView">
+        <button id="scanButton">Scan for Devices</button>
+        <button id="historyButton">View History</button>
+        <ul id="deviceList"></ul>
+    </div>
+
+    <div id="historyView" style="display: none;">
+        <h2>History</h2>
+        <button id="backButton">Back</button>
+        <ul id="historyList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
