@@ -66,9 +66,14 @@ scanButton.addEventListener('click', async () => {
 // --- Functions ---
 
 function saveDevice(device) {
-    let history = JSON.parse(localStorage.getItem('deviceHistory')) || [];
-    history.push(device);
-    localStorage.setItem('deviceHistory', JSON.stringify(history));
+    try {
+        let history = JSON.parse(localStorage.getItem('deviceHistory')) || [];
+        history.push(device);
+        localStorage.setItem('deviceHistory', JSON.stringify(history));
+    } catch (e) {
+        console.error('Failed to save to localStorage', e);
+        alert('Error: Could not save device to history. Your browser might be in private mode or have storage disabled.');
+    }
 }
 
 function loadHistory() {
